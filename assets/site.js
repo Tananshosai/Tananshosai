@@ -30,6 +30,9 @@
     addEventListener("scroll",upd,{passive:true});addEventListener("resize",upd);upd();
   }
 
+  // PWA: no automatic install pop-up — readers can still add the app from the browser menu
+  addEventListener("beforeinstallprompt",function(e){e.preventDefault()});
+
   // PWA: offline reading
   if("serviceWorker" in navigator&&location.protocol==="https:"){
     addEventListener("load",function(){navigator.serviceWorker.register("/sw.js").catch(function(){})});
