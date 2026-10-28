@@ -37,4 +37,12 @@
   if("serviceWorker" in navigator&&location.protocol==="https:"){
     addEventListener("load",function(){navigator.serviceWorker.register("/sw.js").catch(function(){})});
   }
+    // Cloudflare Web Analytics (cookie-free) — only on the real site, not local tests
+  if(/(^|\.)tananshosai\.com$/.test(location.hostname)){
+    var cf=document.createElement("script");
+    cf.type="module";cf.defer=true;
+    cf.src="https://static.cloudflareinsights.com/beacon.min.js";
+    cf.setAttribute("data-cf-beacon",'{"token": "b1fc85320f8645e1837f0ace6233099d"}');
+    document.head.appendChild(cf);
+ }
 })();
