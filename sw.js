@@ -1,6 +1,6 @@
 /* Tanan Shosai service worker — pages: network first (fresh content), falls back to cache offline;
    images/css/js/fonts: cache first. Bump VERSION when assets change. */
-const VERSION = "ts-v4";
+const VERSION = "ts-v5";
 const CORE = ["/", "/works/", "/writing/", "/about/", "/contact/", "/assets/style.css", "/assets/site.js",
   "/manifest.webmanifest", "/icons/icon-192.png", "/404.html"];
 
